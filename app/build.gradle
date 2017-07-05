@@ -51,6 +51,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
-
+//图片框架
+    compile 'com.facebook.fresco:fresco:0.14.1'
+    // 支持 GIF 动图，需要添加
+    compile 'com.facebook.fresco:animated-gif:0.14.1'
     compile 'com.j256.ormlite:ormlite-android:4.48'
 }
