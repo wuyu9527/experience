@@ -38,7 +38,6 @@ public class MyDeviceListAdapter extends ArrayAdapter<MyDeviceListAdapter.Device
         deviceName.setText(device.getDeviceName());
         deviceAddress.setText(device.getAddress());
 
-
         return view;
     }
 
