@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class IDatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     // 数据库名称
-    private static final String DATABASE_NAME = "shop_zgbBoss.db";
+    private static final String DATABASE_NAME = "my_experience.db";
     // 数据库version版本
     private static final int DATABASE_VERSION = 3;
     private static volatile  IDatabaseHelper instance;

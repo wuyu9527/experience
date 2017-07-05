@@ -9,18 +9,9 @@ import java.util.List;
 public class GoodsInfo {
 
 
-    /**
-     * status : 200
-     * result : {"total":"185","list":[{"cargo_cid":"7768","CargoCid":"0","Stock_":"0","shop_id":"1872","item_no":"Cs123567","item_year":"2016","cargo_name":"rrtttyy","sale_price":"21.00","bale_price":"0.00","price_3":"0.00","price_4":"0.00","spec_num":"1","category_id":"0","factory_id":"0","image":"/cargo/1872/1s1000x1000_1872_1480653187-539.jpg","file_id":"9606","priv_level":"0","is_disabled":"0","saler_id":"10010","store_id":"11","created_at":"2016-12-02 12:34:05","updated_at":null,"ImageUrl":"https://bang.yffsc.com/upload/cargo/1872/1s1000x1000_1872_1480653187-539_s240.jpg","cargo_list":[{"cargo_id":"36219","cargo_cid":"7768","shop_id":"1872","spec_json":{"size":"31","color":"姜黄色"},"is_default":"0","is_disabled":"0","sort_num":"0"}]},{"cargo_cid":"7769","CargoCid":"0","Stock_":"0","shop_id":"1872","item_no":"12123","item_year":"2016","cargo_name":"12123","sale_price":"10.00","bale_price":"0.00","price_3":"0.00","price_4":"0.00","spec_num":"2","category_id":"0","factory_id":"0","image":"/cargo/1872/1s1000x1000_1872_1480653556-881.jpg","file_id":"9609","priv_level":"0","is_disabled":"0","saler_id":"10010","store_id":"11","created_at":"2016-12-02 12:39:17","updated_at":null,"ImageUrl":"https://bang.yffsc.com/upload/cargo/1872/1s1000x1000_1872_1480653556-881_s240.jpg","cargo_list":[{"cargo_id":"36221","cargo_cid":"7769","shop_id":"1872","spec_json":{"size":"均码","color":"杏色"},"is_default":"0","is_disabled":"0","sort_num":"0"},{"cargo_id":"36222","cargo_cid":"7769","shop_id":"1872","spec_json":{"size":"均码","color":"浅棕色"},"is_default":"0","is_disabled":"0","sort_num":"0"}]}]}
-     */
 
     private int status;
     private ResultBean result;
-
-    /**
-     * status : 400
-     * errors : [["2","C:store_id","入库门店已禁用","disabled"]]
-     */
 
     private List<List<String>> errors;
     private String msg;
@@ -62,10 +53,7 @@ public class GoodsInfo {
     }
 
     public static class ResultBean {
-        /**
-         * total : 185
-         * list : [{"cargo_cid":"7768","CargoCid":"0","Stock_":"0","shop_id":"1872","item_no":"Cs123567","item_year":"2016","cargo_name":"rrtttyy","sale_price":"21.00","bale_price":"0.00","price_3":"0.00","price_4":"0.00","spec_num":"1","category_id":"0","factory_id":"0","image":"/cargo/1872/1s1000x1000_1872_1480653187-539.jpg","file_id":"9606","priv_level":"0","is_disabled":"0","saler_id":"10010","store_id":"11","created_at":"2016-12-02 12:34:05","updated_at":null,"ImageUrl":"https://bang.yffsc.com/upload/cargo/1872/1s1000x1000_1872_1480653187-539_s240.jpg","cargo_list":[{"cargo_id":"36219","cargo_cid":"7768","shop_id":"1872","spec_json":{"size":"31","color":"姜黄色"},"is_default":"0","is_disabled":"0","sort_num":"0"}]},{"cargo_cid":"7769","CargoCid":"0","Stock_":"0","shop_id":"1872","item_no":"12123","item_year":"2016","cargo_name":"12123","sale_price":"10.00","bale_price":"0.00","price_3":"0.00","price_4":"0.00","spec_num":"2","category_id":"0","factory_id":"0","image":"/cargo/1872/1s1000x1000_1872_1480653556-881.jpg","file_id":"9609","priv_level":"0","is_disabled":"0","saler_id":"10010","store_id":"11","created_at":"2016-12-02 12:39:17","updated_at":null,"ImageUrl":"https://bang.yffsc.com/upload/cargo/1872/1s1000x1000_1872_1480653556-881_s240.jpg","cargo_list":[{"cargo_id":"36221","cargo_cid":"7769","shop_id":"1872","spec_json":{"size":"均码","color":"杏色"},"is_default":"0","is_disabled":"0","sort_num":"0"},{"cargo_id":"36222","cargo_cid":"7769","shop_id":"1872","spec_json":{"size":"均码","color":"浅棕色"},"is_default":"0","is_disabled":"0","sort_num":"0"}]}]
-         */
+
 
         private String total;
         private List<ListBean> list;
@@ -87,32 +75,7 @@ public class GoodsInfo {
         }
 
         public static class ListBean {
-            /**
-             * cargo_cid : 7768
-             * CargoCid : 0
-             * Stock_ : 0
-             * shop_id : 1872
-             * item_no : Cs123567
-             * item_year : 2016
-             * cargo_name : rrtttyy
-             * sale_price : 21.00
-             * bale_price : 0.00
-             * price_3 : 0.00
-             * price_4 : 0.00
-             * spec_num : 1
-             * category_id : 0
-             * factory_id : 0
-             * image : /cargo/1872/1s1000x1000_1872_1480653187-539.jpg
-             * file_id : 9606
-             * priv_level : 0
-             * is_disabled : 0
-             * saler_id : 10010
-             * store_id : 11
-             * created_at : 2016-12-02 12:34:05
-             * updated_at : null
-             * ImageUrl : https://bang.yffsc.com/upload/cargo/1872/1s1000x1000_1872_1480653187-539_s240.jpg
-             * cargo_list : [{"cargo_id":"36219","cargo_cid":"7768","shop_id":"1872","spec_json":{"size":"31","color":"姜黄色"},"is_default":"0","is_disabled":"0","sort_num":"0"}]
-             */
+
 
             private String cargo_cid;
             private String CargoCid;
@@ -332,15 +295,7 @@ public class GoodsInfo {
             }
 
             public static class CargoListBean {
-                /**
-                 * cargo_id : 36219
-                 * cargo_cid : 7768
-                 * shop_id : 1872
-                 * spec_json : {"size":"31","color":"姜黄色"}
-                 * is_default : 0
-                 * is_disabled : 0
-                 * sort_num : 0
-                 */
+
 
                 private String cargo_id;
                 private String cargo_cid;
@@ -407,10 +362,7 @@ public class GoodsInfo {
                 }
 
                 public static class SpecJsonBean {
-                    /**
-                     * size : 31
-                     * color : 姜黄色
-                     */
+
 
                     private String size;
                     private String color;

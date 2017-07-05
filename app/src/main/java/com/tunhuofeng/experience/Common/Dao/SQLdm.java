@@ -16,9 +16,9 @@ import java.io.InputStream;
  */
 public class SQLdm {
     //数据库存储路径
-    String filePath = "data/data/com.yffsc.zgb.boss/databases/shop_zgbBoss.db";
+    String filePath = "data/data/com.tunhuofeng.experience/databases/my_experience.db";
     //数据库存放的文件夹 data/data/com.yffsc.zgb.boss/databases 下面
-    String pathStr = "data/data/com.yffsc.zgb.boss/databases";
+    String pathStr = "data/data/com.tunhuofeng.experience/databases";
     SQLiteDatabase database;
 
     public SQLiteDatabase openDatabase(Context context) {
@@ -37,15 +37,15 @@ public class SQLdm {
                 e.printStackTrace();
             }
             if (path.mkdir()) {
-                Log.i("ZGB", "创建成功");
+                Log.i("whx", "创建成功");
             } else {
-                Log.i("ZGB", "创建失败");
+                Log.i("whx", "创建失败");
             }
             try {
                 //得到资源
                 AssetManager am = context.getAssets();
                 //得到数据库的输入流
-                InputStream is = am.open("shop_zgbBoss.db");
+                InputStream is = am.open("my_experience.db");
                 //用输出流写到SDcard上面
                 FileOutputStream fos = new FileOutputStream(jhPath);
                 //创建byte数组  用于1KB写一次
