@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">笔记</string>
+
+    <string name="week_1">周日</string>
+    <string name="week_2">周一</string>
+    <string name="week_3">周二</string>
+    <string name="week_4">周三</string>
+    <string name="week_5">周四</string>
+    <string name="week_6">周五</string>
+    <string name="week_7">周六</string>
+
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
 </resources>
