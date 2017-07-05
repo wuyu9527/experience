@@ -79,7 +79,7 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends Act
      *
      * @param msg
      */
-    protected void showToast(String msg) {
+    protected void toast(String msg) {
         Toast t = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
         t.setGravity(Gravity.CENTER, 0, 0);
         t.show();

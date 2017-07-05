@@ -5,7 +5,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 
-import com.yffsc.zgb.boss.Util.Constants;
+
+import com.tunhuofeng.experience.Util.Constants;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -2,7 +2,8 @@ package com.tunhuofeng.experience.Common.Base;
 
 import android.content.Context;
 
-import com.yffsc.zgb.boss.MyApplication;
+import com.tunhuofeng.experience.MyApplication;
+
 
 /**
  * Created by zlt on 2016/11/23.
