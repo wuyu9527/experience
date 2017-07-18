@@ -69,6 +69,16 @@ public final class Constants {
         CACHE_DIR_TEXT = CACHE_DIR + "MyText";
     }
 
+    public static final String FOR_CLERK_ROLE = "for_clerk_role";
+    public static final String FOR_CLERK = "for_clerk";
+    public static final String FOR_CLERK_SHOP = "for_clerk_shop";
+    public static final String FOR_CLERK_NAME = "for_clerk_name";
+    public final static String MY_CONNECTED = "MY_CONNECTED";
+    public final static String MY_GET_GOODS_DATA = "Get goods data";//开始更新
+    public final static String MY_GET_DATA_NOT_COMPLETED = "Get data not completed";//更新终止
+    public final static String IN_UPDATE = "In update";//更新中
+    public final static String MY_UPDATE_COMPLETE = "Update complete";//更新完成
+
 
 }
 

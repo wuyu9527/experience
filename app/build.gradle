@@ -56,4 +56,6 @@ dependencies {
     // 支持 GIF 动图，需要添加
     compile 'com.facebook.fresco:animated-gif:0.14.1'
     compile 'com.j256.ormlite:ormlite-android:4.48'
+    //网络请求
+    compile 'cn.finalteam:okhttpfinal:2.0.7'
 }
