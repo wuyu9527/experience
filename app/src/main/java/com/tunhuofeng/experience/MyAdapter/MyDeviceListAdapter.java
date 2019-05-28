@@ -31,8 +31,8 @@ public class MyDeviceListAdapter extends ArrayAdapter<MyDeviceListAdapter.Device
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(mResourceId, null);
-        TextView deviceName = (TextView) view.findViewById(R.id.deviceName);
-        TextView deviceAddress = (TextView) view.findViewById(R.id.deviceAddress);
+        TextView deviceName = view.findViewById(R.id.deviceName);
+        TextView deviceAddress = view.findViewById(R.id.deviceAddress);
 
         assert device != null;
         deviceName.setText(device.getDeviceName());

@@ -12,7 +12,7 @@ import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 
 
@@ -288,7 +288,7 @@ public class UpdateVersionService extends Service {
 
 	private void sendNotification(){
 
-		NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"随便一个id");
 		builder.setSmallIcon(R.mipmap.ic_launcher);
 		builder.setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher));
 		//禁止用户点击删除按钮删除
