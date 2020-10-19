@@ -43,11 +43,12 @@ public class HeadListActivity extends AppCompatActivity {
         recyclerView.setAdapter(headImgAdapter);
     }
 
-    private HeadImgAdapter headImgAdapter;
 
     public void onClickDelete(View view) {
         headImgAdapter.remove(0);
     }
+
+    private HeadImgAdapter headImgAdapter;
 
     private Disposable mSelfCheckDispose;
 
