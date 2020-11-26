@@ -1,6 +1,26 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+import 'dart:ui';
 
-void main() => runApp(MyApp());
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+void main() => runApp(_widgetForRoute(window.defaultRouteName));
+
+Widget _widgetForRoute(String route) {
+  print('route:$route');
+  switch (route) {
+    case '/my_route':
+      return MaterialApp(
+        home: Scaffold(
+          body: MyHomePage(
+            title: 'android跳转到flutter',
+          ),
+        ),
+      );
+    default:
+      return MyApp();
+  }
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -45,6 +65,44 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  String _nativeParams;
+
+  @override
+  void initState() {
+    super.initState();
+    _basicMessageChannel.setMessageHandler(_handlePlatformIncrement);
+    handleEventChannelReceive();
+  }
+
+  //receive
+  void handleEventChannelReceive() {
+    _eventChannel
+        .receiveBroadcastStream() //可以携带参数
+        .listen(_onData, onError: _onError, onDone: _onDone);
+  }
+
+  void _onDone() {
+    setState(() {
+      _nativeParams = "endOfStream";
+    });
+    print('_onDone');
+  }
+
+  _onError(error) {
+    setState(() {
+      PlatformException platformException = error;
+      _nativeParams = platformException.message;
+    });
+    print('_onError');
+  }
+
+  void _onData(message) {
+    setState(() {
+      _nativeParams = message;
+    });
+    print("_onData:$message");
+  }
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -53,6 +111,33 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+    _basicMessageChannel.send("from flutter message");
+    print('_incrementCounter');
+  }
+
+  static const EventChannel _eventChannel = const EventChannel('event2Flutter');
+
+  static const MethodChannel _methodChannel =
+      const MethodChannel('method2Flutter');
+
+  static const BasicMessageChannel<String> _basicMessageChannel =
+      BasicMessageChannel<String>('method2Flutter1', StringCodec());
+
+  Future<String> _handlePlatformIncrement(String message) async {
+    print('_handlePlatformIncrement:$message');
+    setState(() {
+      _counter++;
+    });
+    return 'flutter返回';
+  }
+
+  void send2Android() {
+    print("flutter2Android:send2Android");
+    _methodChannel.invokeMethod('showToast', {
+      //渠道对象调用方法
+      "msg": "消息",
+      "type": 0,
     });
   }
 
@@ -90,6 +175,29 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            new RaisedButton(
+              onPressed: () {
+                send2Android();
+              },
+              child: new Text("发送消息到android"),
+            ),
+            new RaisedButton(
+              onPressed: () {
+                _basicMessageChannel
+                    .send('pong')
+                    .then((value) => print("接受返回$value"));
+                print('持续接受消息');
+              },
+              child: new Text("持续接受消息"),
+            ),
+            new Text("from android : $_nativeParams"),
             Text(
               'You have pushed the button this many times:',
             ),

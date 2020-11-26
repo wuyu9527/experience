@@ -1,6 +1,6 @@
 include ':app', ':library'
-setBinding(new Binding([gradle: this]))                                // new
-evaluate(new File(                                                     // new
-        settingsDir.parentFile,                                              // new
-        'experience/flutter_m/.android/include_flutter.groovy'                         // new
-))
+//setBinding(new Binding([gradle: this]))                                // new
+//evaluate(new File(                                                     // new
+//        settingsDir.parentFile,                                              // new
+//        'experience/flutter_m/.android/include_flutter.groovy'                         // new
+//))
